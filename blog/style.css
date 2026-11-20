@@ -1,0 +1,40 @@
+:root { --acc: #CA9B52; --ink: #222; --mut: #777; --line: #EBEBEB; }
+body { background: #fff; color: var(--ink); font: 400 15.5px/1.85 "Open Sans", sans-serif; }
+h1, h2, h3, .logo, .card b { font-family: "Playfair Display", serif; }
+.w { max-width: 1160px; margin: 0 auto; padding-inline: 20px; }
+.hd { border-bottom: 1px solid var(--line); position: relative; }
+.hd .top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 110px; gap: 16px; }
+.soc { font-size: .78rem; letter-spacing: .14em; color: var(--mut); } .hd .lang { justify-self: end; }
+.lang button { border: 0; background: none; color: var(--mut); font-weight: 600; cursor: pointer; } .lang button[aria-pressed="true"] { color: var(--ink); border-bottom: 2px solid var(--acc); }
+.logo { font-size: clamp(26px, 4vw, 42px); text-decoration: none; color: var(--ink); text-align: center; } .logo em { color: var(--acc); }
+.nav { border-top: 1px solid var(--line); display: none; } .nav .w { display: flex; justify-content: center; gap: 34px; min-height: 54px; align-items: center; }
+.nav a { text-decoration: none; text-transform: uppercase; font-size: .78rem; letter-spacing: .16em; font-weight: 600; color: var(--ink); } .nav a:hover, .nav a[aria-current] { color: var(--acc); }
+.burger { position: absolute; left: 20px; top: 34px; width: 40px; height: 40px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; cursor: pointer; } .burger span { width: 16px; height: 2px; background: var(--ink); box-shadow: 0 5px 0 var(--ink), 0 -5px 0 var(--ink); }
+@media (min-width: 860px) { .nav { display: block; } .burger { display: none; } }
+@media (max-width: 859px) { .soc { display: none; } .hd .top { grid-template-columns: 1fr auto; padding-left: 50px; } .nav.is-open { display: block; } .nav.is-open .w { flex-direction: column; gap: 10px; padding-block: 14px; } }
+.slider { position: relative; margin-top: 30px; } .sl { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .sl::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { .sl { grid-auto-columns: calc(50% - 10px); gap: 20px; } }
+.sl a { scroll-snap-align: start; position: relative; aspect-ratio: 16 / 11; display: block; color: #fff; text-decoration: none; overflow: hidden; }
+.sl img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s; } .sl a:hover img { transform: scale(1.06); }
+.sl span { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); background: #fff; color: var(--ink); padding: 18px 26px; text-align: center; width: min(80%, 420px); }
+.sl small { color: var(--acc); text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 600; } .sl b { display: block; font: 600 1.4rem/1.3 "Playfair Display"; }
+.arr { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border: 0; background: rgba(255,255,255,.9); cursor: pointer; font-size: 1.2rem; z-index: 2; } .arr.p { left: 10px; } .arr.n { right: 10px; }
+.main { display: grid; gap: 50px; padding-block: 50px 80px; } @media (min-width: 960px) { .main { grid-template-columns: 1fr 320px; } }
+.list { display: grid; gap: 44px; }
+.card { display: grid; gap: 14px; text-align: center; } .card .im { display: block; overflow: hidden; } .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 1s; } .card:hover img { transform: scale(1.04); }
+.card small { color: var(--acc); text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 600; } .card b { font-size: 1.8rem; line-height: 1.25; display: block; } .card b a { text-decoration: none; color: inherit; } .card b a:hover { color: var(--acc); }
+.card p { color: var(--mut); } .card .more { justify-self: center; text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 600; border: 1px solid var(--ink); padding: 10px 20px; text-decoration: none; color: var(--ink); transition: background .25s, color .25s; } .card .more:hover { background: var(--ink); color: #fff; }
+.meta { color: var(--mut); font-size: .82rem; }
+.grid2 { display: grid; gap: 30px; } @media (min-width: 700px) { .grid2 { grid-template-columns: 1fr 1fr; } } .grid2 .card b { font-size: 1.35rem; }
+.side { display: grid; gap: 34px; align-content: start; }
+.wd { text-align: center; } .wt { display: block; text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 600; border: 1px solid var(--line); padding: 10px; margin-bottom: 16px; }
+.wd > img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin: 0 auto 12px; } .wd a { color: var(--acc); font-weight: 600; text-decoration: none; font-size: .9rem; }
+.cats { text-align: left; } .cats li { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding: 8px 0; } .cats a { color: var(--ink) !important; font-weight: 400 !important; } .cats span { color: var(--mut); }
+.pop { display: grid; gap: 12px; text-align: left; } .pop a { display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: center; color: var(--ink) !important; font: 600 .95rem/1.3 "Playfair Display" !important; } .pop img { aspect-ratio: 1; object-fit: cover; }
+.wd .fm input { border-radius: 0; } .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; padding: 0 20px; border: 0; background: var(--ink); color: #fff; text-transform: uppercase; letter-spacing: .14em; font: 600 .74rem "Open Sans"; cursor: pointer; transition: background .25s; } .btn:hover { background: var(--acc); }
+.ft { border-top: 1px solid var(--line); text-align: center; } .insta { display: grid; grid-template-columns: repeat(3, 1fr); } @media (min-width: 800px) { .insta { grid-template-columns: repeat(6, 1fr); } } .insta a { display: block; aspect-ratio: 1; overflow: hidden; } .insta img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s, opacity .3s; } .insta a:hover img { transform: scale(1.08); opacity: .8; }
+.ft .w { padding-block: 34px 80px; display: grid; gap: 10px; justify-items: center; } .ft small { color: var(--mut); } .ft small a { color: inherit; }
+.post { display: grid; gap: 22px; } .post h1 { font-size: clamp(30px, 4vw, 46px); text-align: center; line-height: 1.2; } .post .meta { text-align: center; } .post .lead { font-size: 1.15rem; color: #444; }
+.post img.big { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; } .post h2 { font-size: 1.6rem; margin-top: 10px; } .post blockquote { margin: 0; border-left: 3px solid var(--acc); padding: 6px 0 6px 20px; font: italic 600 1.3rem "Playfair Display"; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; } .tags a { border: 1px solid var(--line); padding: 4px 12px; font-size: .78rem; text-decoration: none; color: var(--mut); } .tags a:hover { border-color: var(--acc); color: var(--acc); }
+.author { display: grid; grid-template-columns: 90px 1fr; gap: 18px; align-items: center; border: 1px solid var(--line); padding: 20px; } .author img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
